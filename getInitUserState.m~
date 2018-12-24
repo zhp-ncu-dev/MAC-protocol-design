@@ -1,0 +1,4 @@
+function userState = getInitUserState(Nu, x)
+    p = rand(1, Nu);
+    userState = (p > 1);
+end
