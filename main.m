@@ -20,7 +20,7 @@ x=inv(A)*B; %x(0)为状态为0的概率，x(1)为状态为1的概率
 total_times=100;%仿真次数
 PDR=zeros(1,total_times);
 
-%% 
+%%
 for k=1:total_times
     SFs=10000;  %总的帧数
     reward=zeros(1,Nu); %奖励初始化
@@ -35,7 +35,6 @@ for k=1:total_times
             N=N+1;
         else
             user_state(i)=0;
-         
         end
     end
     %users的奖励从大到小
@@ -57,7 +56,7 @@ for k=1:total_times
                 user_state_mark(i)=0;
             end
         else
-            user_state_mark(i)=-2;   
+            user_state_mark(i)=-2;
         end
     end
     PDR(k)= ans_transmission_success/N;
@@ -69,8 +68,3 @@ for k=1:total_times
     total_PDR= PDR(k)+total_PDR;
 end
 average_PDR=total_PDR/total_times;  %仿真100次的数据包传率
-
-
-
-
-
